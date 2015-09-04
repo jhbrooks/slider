@@ -1,11 +1,11 @@
 #slider {
-	width: 418;
-	height: 577;
+	width: 418px;
+	height: 577px;
 	overflow: hidden;
 	margin: 30px auto;
 }
 
 #slider > img {
-	width: 25%;
-	height: 25%;
+	width: 100%;
+	height: 100%;
 }
