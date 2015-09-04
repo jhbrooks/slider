@@ -5,7 +5,7 @@
 	margin: 30px auto;
 }
 
-img {
+#slider > img {
 	width: 25%;
 	height: 25%;
 }
