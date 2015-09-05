@@ -1,3 +1,8 @@
+.wrapper {
+	width: 418px;
+	margin: 0px auto;
+}
+
 #slider {
 	width: 418px;
 	height: 577px;
