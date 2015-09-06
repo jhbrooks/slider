@@ -23,22 +23,22 @@ $(document).ready(function(){
 
 		var prevImage = function() {
 			clearTimeout(loopImage);
-			var safeCurrent = current - 1;
-			if (safeCurrent < 0) {
-				safeCurrent = safeCurrent + loopPoint;
+			var safePrev = current - 1;
+			if (safePrev < 0) {
+				safePrev = safePrev + loopPoint;
 			};
-			alert(safeCurrent);
-			runSlider(((safeCurrent - 1) % loopPoint),loopPoint);
+			alert(safePrev);
+			runSlider((safePrev % loopPoint),loopPoint);
 		};
 
 		var nextImage = function() {
 			clearTimeout(loopImage);
-			var safeCurrent = current + 1;
-			if (safeCurrent > loopPoint) {
-				safeCurrent = safeCurrent - loopPoint;
+			var safeNext = current + 1;
+			if (safeNext > loopPoint) {
+				safeNext = safeNext - loopPoint;
 			};
-			alert(safeCurrent);
-			runSlider(((current + 1) % loopPoint),loopPoint);
+			alert(safeNext);
+			runSlider((safeNext % loopPoint),loopPoint);
 		};
 
 		$('#slider').off('hover');
