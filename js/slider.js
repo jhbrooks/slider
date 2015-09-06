@@ -43,6 +43,10 @@ $(document).ready(function(){
 
 		$('#slider').off('hover');
 		$('#slider').hover(pauseSlider,resumeSlider);
+		$('a').off('click','.left');
+		$('a').off('click','.right');
+		$('a').on('click','.left',prevImage);
+		$('a').on('click','.right',nextImage);
 		$images.eq((current - 1) % loopPoint).fadeOut(1000);
 		setTimeout(function() {
 			$images.eq(current % loopPoint).fadeIn(1000);
