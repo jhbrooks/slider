@@ -21,7 +21,8 @@ $(document).ready(function(){
 			},6000);
 		};
 
-		var prevImage = function() {
+		var prevImage = function(event) {
+			event.preventDefault();
 			clearTimeout(loopImage);
 			var safePrev = current - 1;
 			if (safePrev < 0) {
@@ -31,7 +32,8 @@ $(document).ready(function(){
 			runSlider((safePrev % loopPoint),loopPoint);
 		};
 
-		var nextImage = function() {
+		var nextImage = function(event) {
+			event.preventDefault();
 			clearTimeout(loopImage);
 			var safeNext = current + 1;
 			if (safeNext > loopPoint) {
