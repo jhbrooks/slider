@@ -7,13 +7,13 @@ $(document).ready(function(){
 	};
 
 	var runSlider = function(current,loopPoint) {
-		$images.eq((current - 1) % loopPoint).fadeOut(300);
+		$images.eq((current - 1) % loopPoint).fadeOut(1000);
 		setTimeout(function() {
-			$images.eq(current % loopPoint).fadeIn(300);
-		},300);
+			$images.eq(current % loopPoint).fadeIn(1000);
+		},1000);
 		setTimeout(function() {
 			runSlider(((current + 1) % loopPoint),loopPoint);
-		} ,3000);	
+		} ,7000);	
 	};
 
 	startSlider();
