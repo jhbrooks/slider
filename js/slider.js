@@ -1,3 +1,14 @@
 $(document).ready(function(){
-	$('#slider').children("img").eq(0).fadeIn(300);
+	var $images = $('#slider').children("img");
+
+	var startSlider = function() {
+		var sliderLength = $images.length;	
+		runSlider(0,sliderLength);
+	};
+
+	var runSlider = function(current,loopPoint) {
+		$images.eq((current - 1) % loopPoint).fadeOut(300);
+		$images.eq(current).fadeIn(300);
+		var sliderLoop = setInterval(runSlider(((current + 1) % loopPoint),loopPoint),3000);	
+	};
 });
