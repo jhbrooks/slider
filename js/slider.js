@@ -11,9 +11,10 @@ $(document).ready(function(){
 		setTimeout(function() {
 			$images.eq(current % loopPoint).fadeIn(1000);
 		},1000);
-		setTimeout(function() {
+		var loopImage = setTimeout(function() {
 			runSlider(((current + 1) % loopPoint),loopPoint);
-		} ,7000);	
+		} ,6000);
+		loopImage();	
 	};
 
 	startSlider();
