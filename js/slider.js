@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 	var startSlider = function() {
 		var sliderLength = $images.length;	
-		runSlider(sliderLength,sliderLength);
+		runSlider((sliderLength * 2),sliderLength);
 	};
 
 	var runSlider = function(current,loopPoint) {
@@ -24,7 +24,7 @@ $(document).ready(function(){
 		var prevImage = function() {
 			clearTimeout(loopImage);
 			var safePrev = current - 1;
-			if (safePrev < 0) {
+			if (safePrev < loopPoint) {
 				safePrev = safePrev + loopPoint;
 			};
 			alert(safePrev);
@@ -34,7 +34,7 @@ $(document).ready(function(){
 		var nextImage = function() {
 			clearTimeout(loopImage);
 			var safeNext = current + 1;
-			if (safeNext >= loopPoint) {
+			if (safeNext >= (loopPoint * 2)) {
 				safeNext = safeNext - loopPoint;
 			};
 			alert(safeNext);
