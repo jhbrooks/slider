@@ -34,7 +34,7 @@ $(document).ready(function(){
 		var nextImage = function() {
 			clearTimeout(loopImage);
 			var safeNext = current + 1;
-			if (safeNext > loopPoint) {
+			if (safeNext >= loopPoint) {
 				safeNext = safeNext - loopPoint;
 			};
 			alert(safeNext);
