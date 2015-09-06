@@ -21,6 +21,21 @@ $(document).ready(function(){
 			},6000);
 		};
 
+		var prevImage = function() {
+			clearTimeout(loopImage);
+			var safeCurrent = current - 1;
+			if (safeCurrent < 0) {
+				safeCurrent = safeCurrent + loopPoint;
+			};
+			alert(safeCurrent);
+			runSlider(((safeCurrent - 1) % loopPoint),loopPoint);
+		};
+
+		var nextImage = function() {
+			clearTimeout(loopImage);
+			runSlider(((current + 1) % loopPoint),loopPoint);
+		};
+
 		$('#slider').off('hover');
 		$('#slider').hover(pauseSlider,resumeSlider);
 		$images.eq((current - 1) % loopPoint).fadeOut(1000);
