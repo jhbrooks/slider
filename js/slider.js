@@ -9,6 +9,8 @@ $(document).ready(function(){
 	var runSlider = function(current,loopPoint) {
 		$images.eq((current - 1) % loopPoint).fadeOut(300);
 		$images.eq(current).fadeIn(300);
-		var sliderLoop = setInterval(runSlider(((current + 1) % loopPoint),loopPoint),3000);	
+		setTimeout(runSlider(((current + 1) % loopPoint),loopPoint),3000);	
 	};
+
+	startSlider();
 });
