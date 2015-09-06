@@ -21,8 +21,7 @@ $(document).ready(function(){
 			},6000);
 		};
 
-		var prevImage = function(event) {
-			event.preventDefault();
+		var prevImage = function() {
 			clearTimeout(loopImage);
 			var safePrev = current - 1;
 			if (safePrev < 0) {
@@ -32,8 +31,7 @@ $(document).ready(function(){
 			runSlider((safePrev % loopPoint),loopPoint);
 		};
 
-		var nextImage = function(event) {
-			event.preventDefault();
+		var nextImage = function() {
 			clearTimeout(loopImage);
 			var safeNext = current + 1;
 			if (safeNext > loopPoint) {
@@ -45,10 +43,15 @@ $(document).ready(function(){
 
 		$('#slider').off('hover');
 		$('#slider').hover(pauseSlider,resumeSlider);
-		$('a').off('click','.left');
-		$('a').off('click','.right');
-		$('a').on('click','.left',prevImage);
-		$('a').on('click','.right',nextImage);
+		$('a').off('click');
+		$('a').click(function(event){
+			event.preventDefault();
+			if ($(this).hasClass('left')) {
+				prevImage();
+			} else {
+				nextImage();
+			};
+		});
 		$images.eq((current - 1) % loopPoint).fadeOut(1000);
 		setTimeout(function() {
 			$images.eq(current % loopPoint).fadeIn(1000);
