@@ -6,10 +6,16 @@ $(document).ready(function(){
 		runSlider(sliderLength,sliderLength);
 	};
 
+	var test = function() {
+		alert("Test has fired!");	
+	};
+
 	var runSlider = function(current,loopPoint) {
 		$images.eq((current - 1) % loopPoint).fadeOut(300);
 		$images.eq(current % loopPoint).fadeIn(300);
-		setTimeout(runSlider(((current + 1) % loopPoint),loopPoint),3000);	
+		setTimeout(function() {
+			runSlider(((current + 1) % loopPoint),loopPoint);
+		} ,3000);	
 	};
 
 	startSlider();
