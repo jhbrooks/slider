@@ -17,5 +17,15 @@ $(document).ready(function(){
 		loopImage();	
 	};
 
+	$('#slider').hover(pauseSlider,resumeSlider);
+
+	var pauseSlider = function() {
+
+	};
+
+	var resumeSlider = function() {
+
+	};
+
 	startSlider();
 });
