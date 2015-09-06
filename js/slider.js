@@ -3,12 +3,12 @@ $(document).ready(function(){
 
 	var startSlider = function() {
 		var sliderLength = $images.length;	
-		runSlider(0,sliderLength);
+		runSlider(sliderLength,sliderLength);
 	};
 
 	var runSlider = function(current,loopPoint) {
 		$images.eq((current - 1) % loopPoint).fadeOut(300);
-		$images.eq(current).fadeIn(300);
+		$images.eq(current % loopPoint).fadeIn(300);
 		setTimeout(runSlider(((current + 1) % loopPoint),loopPoint),3000);	
 	};
 
