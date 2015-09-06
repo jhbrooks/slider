@@ -13,7 +13,7 @@ $(document).ready(function(){
 		},1000);
 		var loopImage = setTimeout(function() {
 			runSlider(((current + 1) % loopPoint),loopPoint);
-		} ,6000);
+		},6000);
 		loopImage();	
 	};
 
