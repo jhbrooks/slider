@@ -33,6 +33,11 @@ $(document).ready(function(){
 
 		var nextImage = function() {
 			clearTimeout(loopImage);
+			var safeCurrent = current + 1;
+			if (safeCurrent > loopPoint) {
+				safeCurrent = safeCurrent - loopPoint;
+			};
+			alert(safeCurrent);
 			runSlider(((current + 1) % loopPoint),loopPoint);
 		};
 
