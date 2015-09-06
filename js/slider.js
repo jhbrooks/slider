@@ -1,3 +1,3 @@
 $(document).ready(function(){
-	$('#slider > img#1').fadeIn(300);
+	$('#slider').children("img").eq(0).fadeIn(300);
 });
