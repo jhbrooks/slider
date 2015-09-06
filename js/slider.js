@@ -41,6 +41,12 @@ $(document).ready(function(){
 			runSlider((safeNext % loopPoint),loopPoint);
 		};
 
+		var safeFade = current - 1;
+
+		if (safeFade < 0) {
+				safeFade = safeFade + loopPoint;
+		};
+
 		$('#slider').off('hover');
 		$('#slider').hover(pauseSlider,resumeSlider);
 		$('a').off('click');
@@ -52,7 +58,8 @@ $(document).ready(function(){
 				nextImage();
 			};
 		});
-		$images.eq((current - 1) % loopPoint).fadeOut(1000);
+		
+		$images.eq((safeFade) % loopPoint).fadeOut(1000);
 		setTimeout(function() {
 			$images.eq(current % loopPoint).fadeIn(1000);
 		},1000);
