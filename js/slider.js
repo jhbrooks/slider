@@ -48,6 +48,17 @@ $(document).ready(function(){
 				runSlider((safeNext % loopPoint),loopPoint);
 			},2000);
 		};
+
+		//For click
+		var safePrev = current - 1;
+		var safeNext = current + 1;
+
+		if (safePrev < 0) {
+			safePrev = safePrev + loopPoint;
+		};
+		if (safeNext >= loopPoint) {
+			safeNext = safeNext - loopPoint;
+		};
 		
 		$('#slider').off('mouseenter');
 		$('#slider').off('mouseleave');
@@ -56,11 +67,14 @@ $(document).ready(function(){
 		$('a').off('click');
 		$('a').click(function(event){
 			event.preventDefault();
-			$('a').off('click');
-			if ($(this).hasClass('left')) {
-				prevImage();
+			if ((($images.eq(safePrev).attr('opacity') !== undefined) || ($images.eq(current).attr('opacity') !== undefined)) || ($images.eq(safeNext).attr('opacity') !== undefined)) {
+				break;
 			} else {
-				nextImage();
+				if ($(this).hasClass('left')) {
+					prevImage();
+				} else {
+					nextImage();
+				};
 			};
 		});	
 	};
