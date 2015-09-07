@@ -67,9 +67,7 @@ $(document).ready(function(){
 		$('a').off('click');
 		$('a').click(function(event){
 			event.preventDefault();
-			if ((($images.eq(safePrev).attr('opacity') !== undefined) || ($images.eq(current).attr('opacity') !== undefined)) || ($images.eq(safeNext).attr('opacity') !== undefined)) {
-				break;
-			} else {
+			if ((($images.eq(safePrev).attr('opacity') === undefined) && ($images.eq(current).attr('opacity') === undefined)) && ($images.eq(safeNext).attr('opacity') === undefined)) {
 				if ($(this).hasClass('left')) {
 					prevImage();
 				} else {
