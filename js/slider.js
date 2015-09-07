@@ -4,12 +4,15 @@ $(document).ready(function(){
 
 	var runSlider = function(current,loopPoint) {
 		var loopImage = setTimeout(function() {
+			$('a').off('click');
 			$images.eq(current % loopPoint).fadeOut(1000);
 			setTimeout(function() {
 				$images.eq((current + 1) % loopPoint).fadeIn(1000);
 			},1000);
-			runSlider(((current + 1) % loopPoint),loopPoint);
-		},6000);
+			setTimeout(function() {
+				runSlider(((current + 1) % loopPoint),loopPoint);
+			},2000);
+		},4000);
 		
 		var pauseSlider = function() {
 			clearTimeout(loopImage);
