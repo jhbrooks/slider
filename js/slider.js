@@ -49,17 +49,6 @@ $(document).ready(function(){
 			},2000);
 		};
 
-		//For click
-		var safePrev = current - 1;
-		var safeNext = current + 1;
-
-		if (safePrev < 0) {
-			safePrev = safePrev + loopPoint;
-		};
-		if (safeNext >= loopPoint) {
-			safeNext = safeNext - loopPoint;
-		};
-		
 		$('#slider').off('mouseenter');
 		$('#slider').off('mouseleave');
 		$('#slider').hover(pauseSlider,resumeSlider);
