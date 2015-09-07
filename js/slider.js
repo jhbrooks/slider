@@ -29,7 +29,9 @@ $(document).ready(function(){
 			setTimeout(function() {
 				$images.eq(safePrev % loopPoint).fadeIn(1000);
 			},1000);
-			runSlider((safePrev % loopPoint),loopPoint);
+			setTimeout(function() {
+				runSlider((safePrev % loopPoint),loopPoint);
+			},2000);
 		};
 
 		var nextImage = function() {
@@ -42,7 +44,9 @@ $(document).ready(function(){
 			setTimeout(function() {
 				$images.eq(safeNext % loopPoint).fadeIn(1000);
 			},1000);
-			runSlider((safeNext % loopPoint),loopPoint);
+			setTimeout(function() {
+				runSlider((safeNext % loopPoint),loopPoint);
+			},2000);
 		};
 		
 		$('#slider').off('mouseenter');
@@ -52,6 +56,7 @@ $(document).ready(function(){
 		$('a').off('click');
 		$('a').click(function(event){
 			event.preventDefault();
+			$('a').off('click');
 			if ($(this).hasClass('left')) {
 				prevImage();
 			} else {
