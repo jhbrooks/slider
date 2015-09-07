@@ -18,13 +18,17 @@ $(document).ready(function(){
 		var resumeSlider = function() {
 			runSlider((current % loopPoint),loopPoint);
 		};
-		/*
+		
 		var prevImage = function() {
 			clearTimeout(loopImage);
 			var safePrev = current - 1;
 			if (safePrev < 0) {
 				safePrev = safePrev + loopPoint;
 			};
+			$images.eq(current % loopPoint).fadeOut(1000);
+			setTimeout(function() {
+				$images.eq(safePrev % loopPoint).fadeIn(1000);
+			},1000);
 			runSlider((safePrev % loopPoint),loopPoint);
 		};
 
@@ -34,19 +38,17 @@ $(document).ready(function(){
 			if (safeNext >= loopPoint) {
 				safeNext = safeNext - loopPoint;
 			};
+			$images.eq(current % loopPoint).fadeOut(1000);
+			setTimeout(function() {
+				$images.eq(safeNext % loopPoint).fadeIn(1000);
+			},1000);
 			runSlider((safeNext % loopPoint),loopPoint);
 		};
 		
-		var safeFade = current - 1;
-
-		if (safeFade < 0) {
-				safeFade = safeFade + loopPoint;
-		};
-		*/
 		$('#slider').off('mouseenter');
 		$('#slider').off('mouseleave');
 		$('#slider').hover(pauseSlider,resumeSlider);
-		/*
+
 		$('a').off('click');
 		$('a').click(function(event){
 			event.preventDefault();
@@ -55,8 +57,7 @@ $(document).ready(function(){
 			} else {
 				nextImage();
 			};
-		});
-		*/	
+		});	
 	};
 
 	$images.eq(0).fadeIn(1000);
