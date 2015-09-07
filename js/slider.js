@@ -43,7 +43,8 @@ $(document).ready(function(){
 				safeFade = safeFade + loopPoint;
 		};
 		*/
-		$('#slider').off('hover');
+		$('#slider').off('mouseenter');
+		$('#slider').off('mouseleave');
 		$('#slider').hover(pauseSlider,resumeSlider);
 		/*
 		$('a').off('click');
@@ -57,7 +58,7 @@ $(document).ready(function(){
 		});
 		*/	
 	};
-	
+
 	$images.eq(0).fadeIn(1000);
 	setTimeout(function() {
 		runSlider(0,sliderLength);
