@@ -55,7 +55,6 @@ $(document).ready(function(){
 
 		$('a').off('click');
 		$('a').click(function(event){
-			event.preventDefault();
 			$('a').off('click');
 			if ($(this).hasClass('left')) {
 				prevImage();
