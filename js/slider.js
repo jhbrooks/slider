@@ -25,7 +25,6 @@ $(document).ready(function(){
 			if (safePrev < 0) {
 				safePrev = safePrev + loopPoint;
 			};
-			alert(safePrev);
 			runSlider((safePrev % loopPoint),loopPoint);
 		};
 
@@ -35,7 +34,6 @@ $(document).ready(function(){
 			if (safeNext >= loopPoint) {
 				safeNext = safeNext - loopPoint;
 			};
-			alert(safeNext);
 			runSlider((safeNext % loopPoint),loopPoint);
 		};
 
