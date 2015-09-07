@@ -16,9 +16,7 @@ $(document).ready(function(){
 		};
 
 		var resumeSlider = function() {
-			var loopImage = setTimeout(function() {
-				runSlider(((current + 1) % loopPoint),loopPoint);
-			},6000);
+			runSlider(((current + 1) % loopPoint),loopPoint);
 		};
 
 		var prevImage = function() {
