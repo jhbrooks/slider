@@ -62,8 +62,7 @@ $(document).ready(function(){
 		$images.eq((safeFade) % loopPoint).fadeOut(1000);
 		setTimeout(function() {
 			$images.eq(current % loopPoint).fadeIn(1000);
-		},1000);
-		loopImage();	
+		},1000);	
 	};
 
 	startSlider();
